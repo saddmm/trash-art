@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tes-aslab-445103",
+  "private_key_id": "2059360a90fa3ad4620486599b6fcdfaadab14e5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCmlo/I9LVHK8ij\nnS9o8QopEDe4SY68S4oZ/pwxwHrZ8gyJRjErQ+GHU/iMCiNaABXGkB+09QLq8sjT\nkEcXOu5DlyhBiQU+wvcEK1h5DbgX69FsiFPnrSYef0M2SrmRCNMUUB6LGETCCTMT\njo63smp3ccWE4++RldXpS9Q+ANSJfmMuYLJHoVYcH+ZZi8ZT/pL96CgL1rCmum2L\nTku/Q4d0K3pcX2KVGPafTrmxxXZVD0+JLXLjXBSlha8QiP1M7MK9faMMN8PRPgxn\naxIqpnm/+INzUdE6nfKUH/7IKgTRPoM5mCjJCPAYcfbPwel6UgEhpRzLnYYKRdzO\nqGJOC7XPAgMBAAECggEAE1ZIG8mGqVuZufRAUUF5g8lleQzWIWFGBz0YyxBOslx4\nZrmGckE6PUfarVbCl8CJcTfAQR8XrEdrrF3ZArH31PyyKDlMKebeXtYxOjavdzIL\nveTCkz1JaXeC88W6GJhvorH8zvni3AB5X1HIReZ97p4pkVgWsk2JkRUY7pbmFOIu\nK7+yzBYSOcT1dAQR7zDxzZ+eItXwk9wWnrmvw/G6fFrOTUhG3J68V/oeCTUG/f5k\n9IDLQ4RnlziTBiSYrCKnhgxqVI74U5NzLxbkGRJylqJui1k4PIzfJptof5GidxdJ\nTBDh8TQsku6QuLs/EoikQrBJbeq4gDRQ3jZTDPvTEQKBgQDbCi9Pww+/3g9clvYE\n8141wOV3nRJVMnKOy7iBD7sh6YsfcxbZmFScMJFZJPEUT7dgXLqRmjHJKJfS4jtL\nwVp+UJnL5A7wKDCoHsPB7uR4+hCe6pMzX39br7vA36Ez2tFfkPR0DjcfNcQafl1a\n0zlQ3ZlctZNMG5SVdqJOnhxnhQKBgQDCsqJHfdThPw6F0t20WG5ByCVyxHbX57TL\nvc1vaYJkZQFRPTD5Wp/Aqj4yEO7ZUMn1lQY81JtT0uR/JLEeQrRP1+HUvvzZDHeS\nMGY8YVE2vInreUuQZynFmItO1f/DRoxa5E8mbMQdr7bp0yHu8u9FKeQsAvcwEzA4\nydxw28mGQwKBgHmDc+2209ToFvORl9f1Pw1o/qPV0mbLPrwzDh8jH/hXPGPtD/8U\nv9OKKggfM1LGSn+90Y6W0Qm8aEWIVcbX9CDhDAENerAGS7/omUbMBZmLeI8AqTq1\nvsyZd/ou1ZoTyVVP8B02CaRZynm8IoQRa9mNpdfFr3poToyALNiaZD2VAoGBAJdn\nerLFs4oGEzEWLbpVGkilcBmzlgeH9ByMWPlOv0t7EG8weqkuRBT7Tqp4aIUuQh9r\n6BHd83xX/8Cvs9yoWrfMVZ2vd8kB3OoeISLLOvCp5UbsaEq/LsiuO4bu+5nLftIf\nwT1MT6YWQtPKkBTVbiQG0502ISuNgG5o67gH8sspAoGBALzyogTPpXNzn/VE82m7\ngbo97FHVzij4bvbO/sgwbh7TPWGe2AwmcvxUnvVX5/syR9o0DirGru1VUaRnqMz/\nBm7ARCzrTNbjIIrx5Phe4UbV9ZPNUPmeyypDDuQSgA6uiOwObvGMXoEwSDmlFCd5\n21RLEFDQU3jy7DFI6oYmv56z\n-----END PRIVATE KEY-----\n",
+  "client_email": "firestore@tes-aslab-445103.iam.gserviceaccount.com",
+  "client_id": "111886858531913361636",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firestore%40tes-aslab-445103.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

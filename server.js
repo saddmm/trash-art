@@ -3,7 +3,6 @@ const app = express()
 const port = process.env.PORT || 5000
 import userRoutes from './routes/userRoutes.js'
 import ejs from 'ejs'
-import fileUpload from "express-fileupload"
 import cors from 'cors'
 
 
@@ -18,7 +17,6 @@ app.get('/', (req, res) => {
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(fileUpload())
 
 app.use('/user', userRoutes)
 
