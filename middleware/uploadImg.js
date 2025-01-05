@@ -25,15 +25,26 @@ export const uploadHandler = multer({
       cb(new Error('Only images are allowed!'), false);
     }
   },
-}).single('image');
+});
+
+export const deleteImgGCS = async (filename) => {
+  try {
+    await storage.bucket(process.env.BUCKET).file(`images/${filename}`).delete();
+  } catch (error) {
+    console.error(`Failed to delete file ${filename}:`, error);
+  }
+}
 
 // Fungsi untuk mengupload file ke Google Cloud Storage
 export const uploadToGCS = (req, res, next) => {
   if (!req.file) {
-    return res.status(400).send('No file uploaded.');
+    return next();
   }
 
-  const blob = bucket.file(`images/${Date.now()}-${req.file.originalname}`);
+  const {originalname} = req.file
+  const filename = originalname.replaceAll(' ', '-')
+
+  const blob = bucket.file(`images/${Date.now()}-${filename}`);
   const blobStream = blob.createWriteStream({
     resumable: false,
   });

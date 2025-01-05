@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import axios from "axios";
 import FormData from "form-data";
+import { deleteImgGCS } from "../middleware/uploadImg.js";
 
 
 dotenv.config();
@@ -11,12 +12,6 @@ const saltRounds = process.env.SALT || 10;
 const salt = bcrypt.genSaltSync(saltRounds);
 export const createUser = async (req, res) => {
   try {
-    if (!req.file) {
-      return res.status(400).json({
-        status: "fail",
-        msg: "Upload failed"
-        })
-    }
 		const { username, email, telp, password, confirmPassword } = req.body;
 		if (!username || !email || !password || !confirmPassword || !telp) {
 			return res.status(400).json({
@@ -40,7 +35,7 @@ export const createUser = async (req, res) => {
         email,
         telp,
 				password: await bcrypt.hash(password, salt),
-				img: req.file.Url,
+				img: req.file ? req.file.Url : "",
 			};
 			const docRef = await dbFirestore
 				.collection("users")
@@ -66,6 +61,37 @@ export const createUser = async (req, res) => {
 		}
 
 };
+
+export const updateUser = async (req, res) => {
+	try {
+		const { email } = req.user;
+		const user = await dbFirestore.collection("users").doc(email).get()
+		const urlOld = user.data().img
+		if (urlOld) {
+			const url = new URL(urlOld)
+			const filename = url.pathname.split('/').pop()
+			await deleteImgGCS(filename)
+		}
+
+		const data = {
+			img: req.file ? req.file.Url : ""
+		}
+
+		const docRef = await dbFirestore.collection("users").doc(email)
+		await docRef.update(data)
+		return res.status(201).json({
+			status: "success",
+				msg: "Profile updated",
+		})
+
+	} catch (err) {
+		return res.json({
+			status: "fail",
+			msg: "Update failed",
+			err: err.message
+		})
+	}
+}
 
 export const loginUser = async (req, res) => {
 	try {
@@ -120,10 +146,10 @@ export const getUsers = async (req, res) => {
 
 export const predict = async (req, res) => {
 	try {
-		const file = req.files.imgFile;
+		const file = req.file;
 		const email = req.user.email;
 		const formData = new FormData();
-		formData.append("imgFile", file.data, file.name);
+		formData.append("imgFile", file.buffer, file.originalname);
 		const response = await axios.post(
 			"http://35.193.75.114/predict",
 			formData,
